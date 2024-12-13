@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Tax Payment Tracker</title>
+</head>
+<body>
+    <h1>Tax Payment Tracker</h1>
+    <form id="paymentForm">
+        <input type="text" name="company" placeholder="Company" required>
+        <input type="number" name="amount" placeholder="Amount" required>
+        <input type="date" name="payment_date">
+        <select name="status" required>
+            <option value="paid">Paid</option>
+            <option value="unpaid">Unpaid</option>
+        </select>
+        <select name="due_date" required>
+            <option value="04/15/2024">April 15, 2024</option>
+            <option value="06/15/2024">June 15, 2024</option>
+            <option value="09/15/2024">September 15, 2024</option>
+            <option value="01/15/2025">January 15, 2025</option>
+        </select>
+        <button type="submit">Save</button>
+    </form>
+    <div id="paymentTable"></div>
+
+    <!-- Place your script here -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
