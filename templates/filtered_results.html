@@ -1,0 +1,33 @@
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Company</th>
+            <th>Amount</th>
+            <th>Payment Date</th>
+            <th>Status</th>
+            <th>Due Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if payments %}
+            {% for payment in payments %}
+            <tr>
+                <td>{{ payment.id }}</td>
+                <td>{{ payment.company }}</td>
+                <td>{{ payment.amount }}</td>
+                <td>{{ payment.payment_date }}</td>
+                <td>{{ payment.status }}</td>
+                <td>{{ payment.due_date }}</td>
+            </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="6">No payments due for this date.</td>
+            </tr>
+        {% endif %}
+    </tbody>
+</table>
+<p>Total Amount: ${{ total_amount }}</p>
+<p>Tax Rate: {{ tax_rate }}%</p>
+<p>Tax Due: ${{ tax_due }}</p>
